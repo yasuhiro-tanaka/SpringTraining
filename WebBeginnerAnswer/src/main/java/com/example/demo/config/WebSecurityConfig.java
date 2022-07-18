@@ -1,43 +1,49 @@
 package com.example.demo.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.example.demo.service.AccountUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+	private AccountUserDetailsService userDetailsService;
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		//ログイン不要
-		http.authorizeRequests()
-			.antMatchers("/", "/login").permitAll()
-			.anyRequest().authenticated();
-		//ログイン処理
-		http.formLogin()
-			.loginProcessingUrl("/login")
-			.loginPage("/index")
-			.failureUrl("/login") //ログイン失敗時の遷移先
-			.defaultSuccessUrl("/inquiry", true); //ログイン成功後の遷移先
-		
-		http.logout()
-			.logoutUrl("/logout") //ログアウトのURL
-			.logoutSuccessUrl("/")
-			.invalidateHttpSession(true); 
+		// ログイン不要
+		http.authorizeRequests().antMatchers("/").permitAll().anyRequest().authenticated();
+		// ログイン処理
+		http.formLogin().loginProcessingUrl("/login").failureUrl("/login") // ログイン失敗時の遷移先
+				.defaultSuccessUrl("/inquiry", true) // ログイン成功後の遷移先
+				.usernameParameter("username")// ログインフォームで使用するユーザー名
+				.passwordParameter("password")// ログインフォームで使用するパスワード
+				;
+		//ログアウト処理
+		http.logout().logoutUrl("/logout") // ログアウトのURL
+				.logoutSuccessUrl("/").invalidateHttpSession(true).permitAll();
 	}
 
-	@Bean
 	@Override
-	public UserDetailsService userDetailsService() {
-		UserDetails user = User.withDefaultPasswordEncoder().username("user").password("user").roles("USER")
-				.build();
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		// 認証するユーザー情報をデータベースからロードする
+		// その際、パスワードはBCryptで暗号化した値を利用する
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+	}
 
-		return new InMemoryUserDetailsManager(user);
+	@SuppressWarnings("deprecation")
+	@Bean
+	PasswordEncoder passwordEncoder() {
+		return NoOpPasswordEncoder.getInstance();
 	}
 }

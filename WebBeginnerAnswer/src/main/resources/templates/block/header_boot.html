@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <header th:fragment="headerA_boot">
 
@@ -41,7 +42,12 @@
 				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
-			<form class="my-2 my-lg-0" th:action="@{/logout}" method="post">
+			<div class="text-light">
+				<norb>Id:</norb><norb sec:authentication="principal.user.id"></norb>
+				<norb>Name:</norb><norb sec:authentication="principal.user.name"></norb>
+				<norb>Role:</norb><norb sec:authentication="principal.user.role"></norb>
+			</div>
+			<form class="my-2 my-lg-0 mx-4" th:action="@{/logout}" method="post">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Out</button>
 			</form>
 		</div>

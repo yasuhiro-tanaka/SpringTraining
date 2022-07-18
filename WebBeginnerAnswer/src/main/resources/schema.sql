@@ -17,3 +17,13 @@ CREATE TABLE survey
    created DATETIME NOT NULL,
    PRIMARY KEY(id)
 );
+
+CREATE TABLE user
+(
+   id INT NOT NULL,
+   name VARCHAR(32) NOT NULL,
+   password VARCHAR(32) NOT NULL,
+   role VARCHAR(10),
+   created DATETIME NOT NULL,
+   PRIMARY KEY(id)
+);
