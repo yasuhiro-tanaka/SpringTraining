@@ -16,18 +16,33 @@
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#" th:href="@{/inquiry}">お問い合わせ一覧</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown_inquiry"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">問合せ</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<a class="dropdown-item" th:href="@{/inquiry}">問合せ一覧</a>
+						<a class="dropdown-item" th:href="@{/inquiry/form}">問合せフォーム</a>
+					</div>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#" th:href="@{/inquiry/form}">お問い合わせフォーム</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown_survey"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">アンケート</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<a class="dropdown-item" th:href="@{/survey}">アンケート一覧</a>
+						<a class="dropdown-item" th:href="@{/survey/form}">アンケートフォーム</a>
+					</div>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#" th:href="@{/survey}">アンケート一覧</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown_survey"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">レイアウト</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<a class="dropdown-item" th:href="@{/layoutsample/gridsystem}">グリッドシステム</a>
+						<a class="dropdown-item" th:href="@{/layoutsample/fixedfooter}">固定フッター</a>
+						<a class="dropdown-item" th:href="@{/layoutsample/accordion}">アコーディオン</a>
+						<a class="dropdown-item" th:href="@{/layoutsample/sidebars}">サイドバー</a>
+					</div>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#" th:href="@{/survey/form}">アンケートフォーム</a>
-				</li>
+				<!--
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -35,6 +50,14 @@
 						<a class="dropdown-item" href="#">Action</a>
 						<a class="dropdown-item" href="#">Another action</a>
 						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				-->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown_master"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">マスター</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<a class="dropdown-item" th:href="@{/master/fruit}">Fruit</a>
 					</div>
 				</li>
 			</ul>

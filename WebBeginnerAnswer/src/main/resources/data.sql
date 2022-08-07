@@ -16,3 +16,13 @@ INSERT INTO user(id, name, password, role, created)
 VALUES(1, 'admin', 'admin', 'ADMIN', '2019-01-03 11:02:35');
 INSERT INTO user(id, name, password, role, created)
 VALUES(2, 'user', 'user', 'USER', '2019-01-03 11:02:35');
+
+
+INSERT INTO fruit(name, price, created)
+VALUES('りんご', 100, '2019-01-03 11:02:35');
+INSERT INTO fruit(name, price, created)
+VALUES('みかん', 200, '2019-01-03 11:02:35');
+INSERT INTO fruit(name, price, created)
+VALUES('バナナ', 20, '2019-01-03 11:02:35');
+INSERT INTO fruit(name, price, created)
+VALUES('いちご', 300, '2019-01-03 11:02:35');

@@ -1,0 +1,174 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<link href="main.css" th:href="@{/css/main.css}" rel="stylesheet">
+
+	<title>Hello, world!</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-6 border-start">
+				<div class="accordion" id="accordionPanelsStayOpenExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="accordion-head-1">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse"
+								data-bs-target="#accordion-panle-1" aria-expanded="true"
+								aria-controls="accordion-panle-1">
+								Accordion Item #1
+							</button>
+						</h2>
+						<div id="accordion-panle-1" class="accordion-collapse collapse show"
+							aria-labelledby="accordion-head-1">
+							<div class="accordion-body">
+								<button type="button" class="btn btn-dark btn-lg">ボタン</button>
+								<button type="button" class="btn btn-dark btn-lg">ボタン</button>
+								<button type="button" class="btn btn-dark btn-lg">ボタン</button>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+								aria-controls="panelsStayOpen-collapseTwo">
+								Accordion Item #2
+							</button>
+						</h2>
+						<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+							aria-labelledby="panelsStayOpen-headingTwo">
+							<div class="accordion-body">
+								<strong>This is the second item's accordion body.</strong> It is hidden by default,
+								until
+								the
+								collapse plugin adds the appropriate classes that we use to style each element. These
+								classes
+								control the overall appearance, as well as the showing and hiding via CSS transitions.
+								You
+								can
+								modify any of this with custom CSS or overriding our default variables. It's also worth
+								noting that
+								just about any HTML can go within the <code>.accordion-body</code>, though the
+								transition
+								does limit
+								overflow.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="panelsStayOpen-headingThree">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+								aria-controls="panelsStayOpen-collapseThree">
+								Accordion Item #3
+							</button>
+						</h2>
+						<div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+							aria-labelledby="panelsStayOpen-headingThree">
+							<div class="accordion-body">
+								<strong>This is the third item's accordion body.</strong> It is hidden by default, until
+								the
+								collapse plugin adds the appropriate classes that we use to style each element. These
+								classes
+								control the overall appearance, as well as the showing and hiding via CSS transitions.
+								You
+								can
+								modify any of this with custom CSS or overriding our default variables. It's also worth
+								noting that
+								just about any HTML can go within the <code>.accordion-body</code>, though the
+								transition
+								does limit
+								overflow.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 border-start">
+				<div class="accordion" id="accordion-4">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="accordion-head-4">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse"
+								data-bs-target="#accordion-panle-4" aria-expanded="true"
+								aria-controls="accordion-panle-4">
+								Accordion Item #4
+							</button>
+						</h2>
+						<div id="accordion-panle-4" class="accordion-collapse collapse show"
+							aria-labelledby="accordion-head-4">
+							<div class="accordion-body">
+								<div class="d-grid gap-1">
+									<button type="button" class="btn btn-dark float-start">ボタン</button>
+									<button type="button" class="btn btn-dark">ボタン</button>
+									<button type="button" class="btn btn-dark">ボタン</button>
+									<div class="d-flex bg-dark">I'm a flexbox container!</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="accordion-head-5">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse"
+								data-bs-target="#accordion-panle-5" aria-expanded="true"
+								aria-controls="accordion-panle-5">
+								Accordion Item #5
+							</button>
+						</h2>
+						<div id="accordion-panle-5" class="accordion-collapse collapse show"
+							aria-labelledby="accordion-head-5">
+							<div class="accordion-body">
+								<div class="d-block">
+									<button type="button" class="btn btn-dark">ボタン</button>
+									<button type="button" class="btn btn-dark">ボタン</button>
+									<button type="button" class="btn btn-dark">ボタン</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="accordion-head-6">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse"
+								data-bs-target="#accordion-panle-6" aria-expanded="true"
+								aria-controls="accordion-panle-6">
+								Accordion Item #6
+							</button>
+						</h2>
+						<div id="accordion-panle-6" class="accordion-collapse collapse show"
+							aria-labelledby="accordion-head-6">
+							<div class="accordion-body">
+								<button type="button" class="btn btn-dark btn-lg">ボタン</button>
+								<button type="button" class="btn btn-dark btn-lg">ボタン</button>
+								<button type="button" class="btn btn-dark btn-lg">ボタン</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

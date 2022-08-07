@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+header {
+  background-color: rgba(245, 178, 177, 0.5);
+}
+
+main {
+  flex: 1;
+  overflow-y: scroll;
+  background-color: rgba(255, 253, 237, 1);
+}
+
+footer {
+  background-color: rgba(201, 187, 155, 0.5);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn-block {
+  color: var(--bs-light);;
+  background-color: var(--bs-dark);;
+  border: 1;
+  border-color: var(--bs-light);;
+}
+

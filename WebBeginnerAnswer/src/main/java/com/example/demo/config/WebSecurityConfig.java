@@ -22,7 +22,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// ログイン不要
-		http.authorizeRequests().antMatchers("/").permitAll().anyRequest().authenticated();
+		http.authorizeRequests()
+			.antMatchers("/css/**", "/js/**").permitAll()
+			.anyRequest().authenticated();
 		// ログイン処理
 		http.formLogin().loginProcessingUrl("/login").failureUrl("/login") // ログイン失敗時の遷移先
 				.defaultSuccessUrl("/inquiry", true) // ログイン成功後の遷移先

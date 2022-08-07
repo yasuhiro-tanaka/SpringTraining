@@ -27,3 +27,12 @@ CREATE TABLE user
    created DATETIME NOT NULL,
    PRIMARY KEY(id)
 );
+
+CREATE TABLE fruit
+(
+   id INT NOT NULL AUTO_INCREMENT,
+   name VARCHAR(32) NOT NULL,
+   price INT NOT NULL,
+   created DATETIME NOT NULL,
+   PRIMARY KEY(id)
+);
