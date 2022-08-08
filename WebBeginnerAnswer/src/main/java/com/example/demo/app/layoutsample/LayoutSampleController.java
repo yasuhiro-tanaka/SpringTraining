@@ -2,7 +2,6 @@ package com.example.demo.app.layoutsample;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +33,18 @@ public class LayoutSampleController {
 	public String sidebars(@ModelAttribute SimpleForm simpleForm, Model model) {
 		model.addAttribute("title", "SideBars");
 		return "layoutsample/sidebars";
+	}
+	
+	@GetMapping("/form-date")
+	public String formDate(@ModelAttribute SimpleForm simpleForm, Model model) {
+		model.addAttribute("title", "Form Date");
+		return "layoutsample/form-date";
+	}
+	
+	@PostMapping("/form-date/set")
+	public String setFormDate(@ModelAttribute SimpleForm simpleForm, Model model) {
+		model.addAttribute("title", "Form Date");
+		return "layoutsample/form-date";
 	}
 
 }
